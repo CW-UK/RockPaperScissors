@@ -18,7 +18,7 @@ import java.util.Random;
 public class GenesisRPS extends JavaPlugin implements Listener, TabCompleter {
 
     String[] rps = {"rock", "paper", "scissors"};
-    
+
     @Override
     public void onEnable() {
         Bukkit.getLogger().info("GenesisRPS has been enabled.");
@@ -63,7 +63,7 @@ public class GenesisRPS extends JavaPlugin implements Listener, TabCompleter {
 
     @Override
     public List<String> onTabComplete(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-        if (cmd.getName().equalsIgnoreCase("ftb")) {
+        if (cmd.getName().equalsIgnoreCase("rps")) {
             if (args.length == 1) {
                 final List<String> commands = Arrays.asList("rock", "paper", "scissors");
                 return StringUtil.copyPartialMatches(args[0], commands, new ArrayList<>());
