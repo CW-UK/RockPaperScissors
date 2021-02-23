@@ -34,26 +34,26 @@ public class GenesisRPS extends JavaPlugin implements Listener, TabCompleter {
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if (cmd.getName().equalsIgnoreCase("rps")) {
             Player p = (Player) sender;
-            if (args.length < 2) {
-                tellPlayer(p,"You need to specify rock, paper or scissors!");
+            if (args.length < 1) {
+                tellPlayer(p, "You need to specify rock, paper or scissors!");
             }
             else {
                 int rnd = new Random().nextInt(rps.length);
                 String myChoice = rps[rnd];
-                String user = args[1].toLowerCase();
+                String user = args[0].toLowerCase();
                 switch (myChoice) {
                     case "rock":
-                        if (user.equals("paper")) { playerWon(p, "rock"); }
-                        else if (user.equals("rock")) { playerDraw(p, "rock"); }
-                        else { playerLost(p, "rock"); }
+                        if (user.equals("paper")) { playerWon(p, "rock"); break; }
+                        if (user.equals("rock")) { playerDraw(p, "rock"); break; }
+                        playerLost(p, "rock"); break;
                     case "paper":
-                        if (user.equals("scissors")) { playerWon(p, "paper"); }
-                        else if (user.equals("paper")) { playerDraw(p, "paper"); }
-                        else { playerLost(p, "paper"); }
+                        if (user.equals("scissors")) { playerWon(p, "paper"); break; }
+                        if (user.equals("paper")) { playerDraw(p, "paper"); break; }
+                        playerLost(p, "paper"); break;
                     case "scissors":
-                        if (user.equals("rock")) { playerWon(p, "scissors"); }
-                        else if (user.equals("scissors")) { playerDraw(p, "scissors"); }
-                        else { playerLost(p, "scissors"); }
+                        if (user.equals("rock")) { playerWon(p, "scissors"); break; }
+                        if (user.equals("scissors")) { playerDraw(p, "scissors"); break; }
+                        playerLost(p, "scissors"); break;
                 }
             }
             return true;

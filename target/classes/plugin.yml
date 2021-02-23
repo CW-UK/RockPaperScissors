@@ -1,0 +1,11 @@
+name: GenesisRPS
+main: eu.genesismc.genesisrps.GenesisRPS
+version: 1.0
+author: CW_UK
+api-version: 1.15
+depend: []
+
+commands:
+  rps:
+    description: Play rock paper scissors
+    usage: "/rps <rock|paper|scissors>"
